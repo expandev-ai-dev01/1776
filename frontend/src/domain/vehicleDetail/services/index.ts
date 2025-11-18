@@ -1,0 +1,1 @@
+export { vehicleDetailService } from './vehicleDetailService';

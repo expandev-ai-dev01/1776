@@ -6,6 +6,7 @@ import { ErrorBoundary } from '@/core/components/ErrorBoundary';
 import { MainLayout } from '@/layouts/MainLayout';
 
 const HomePage = lazy(() => import('@/pages/Home'));
+const VehicleDetailPage = lazy(() => import('@/pages/VehicleDetail'));
 
 export const appRouter = createBrowserRouter([
   {
@@ -21,6 +22,14 @@ export const appRouter = createBrowserRouter([
             element: (
               <Suspense fallback={<LoadingSpinner />}>
                 <HomePage />
+              </Suspense>
+            ),
+          },
+          {
+            path: 'vehicle/:id',
+            element: (
+              <Suspense fallback={<LoadingSpinner />}>
+                <VehicleDetailPage />
               </Suspense>
             ),
           },
